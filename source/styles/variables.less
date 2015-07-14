@@ -1,0 +1,74 @@
+﻿@import "lesshat.less";
+
+@retina: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 192dpi)";
+@pageWidth: 960px;
+
+@Roboto: Roboto, sans-serif;
+@light: 300;
+@regular: 400;
+@medium: 500;
+
+@grey-black: black;
+@grey-dark: #555;
+@grey-dark-lighter: #333;
+@grey-medium: #999999;
+@grey-darklight: hsv(0, 0, 60%);
+@grey-light: #d7d7d7;
+@grey-line: hsv(0, 0, 90%);
+@grey-line-dark: hsv(0, 0, 80%);
+@grey-verylight: #6f6f6f;
+@grey-bg: hsv(0, 0, 97%);
+
+//@blue: #0060BA;
+@blue: #0055A6;
+@red: #E84132;
+@orange: #F78818;
+@green: #7ED321;
+@pink:#f52c66;
+
+@hover-link: @blue;
+//@hover-link: #4C88C1;
+@hover-button: #004C94;
+//@hover-button: #3377B8;
+@hover-block: #EDF7FF;
+
+@button-shadow: 0px 1px 2px 0px rgba(0,0,0,0.50);
+
+.default-transition(...) {
+  @value: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+  transition: @value 0.1s ease-in-out;
+}
+
+.image-2x(@image, @repeat: no-repeat) {
+  @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
+  @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
+  background-image: ~`"url('@{filename}.@{extension}')"`;
+  background-repeat: @repeat;
+  
+  @media @retina {
+      background-image: ~`"url('@{filename}@2x.@{extension}')"`;
+      background-size: image-size(@image);
+  }
+}
+
+.image-2x(@image, @repeat: no-repeat, @dataURI) when (@dataURI = true) {
+  @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
+  @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
+  background-image: data-uri('@{filename}.@{extension}');
+  background-repeat: @repeat;
+  
+  @media @retina {
+      background-image: data-uri('@{filename}@2x.@{extension}');
+      background-size: image-size(@image);
+  }
+}
+
+.clearfix {
+    &:after {
+        content: " "; /* Older browser do not support empty content */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+}
