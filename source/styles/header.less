@@ -78,17 +78,18 @@
 					left: 50%;
 					margin-left: -6px;
 		    		background-image: data-uri('image/png;base64', 'img/ico-star.png');
+					@media @retina {
+						content: "";
+						width: 26px;
+						height: 24px;
+						position: absolute;
+						bottom: -13px;
+						left: 50%;
+						margin-left: -12px;
+						background-image: data-uri('image/png;base64', 'img/ico-star2x.png');
+					}
 		    	}
-		    	@media @retina {
-		    		content: "";
-					width: 26px;
-					height: 24px;
-					position: absolute;
-					bottom: -13px;
-					left: 50%;
-					margin-left: -12px;
-		    		background-image: data-uri('image/png;base64', 'img/ico-star2x.png');
-		    	}
+
 	    	}
 	    }
 	}

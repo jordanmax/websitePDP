@@ -1,1 +1,3 @@
-
+$(function() {
+    $("#currency-select").selectmenu();
+});

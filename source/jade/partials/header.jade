@@ -17,31 +17,29 @@ header.top-header.clearfix
 					.currency-dropdown
 						header
 							img(src="img/USA-flag.png", alt="USA-flag")
-							span United Kindom
+							span United Kingdom
 						.change-currency
 							span.title Change currency:
-							span.select
-								a.drop-down-toggle(href="#") $ USD
-									span.caret
-								ul.drop-down
-									li $ GBP
-									li C$ CAD
+							select#currency-select.select(name="currency")
+								option(value="$ USD" selected) $ USD
+								option(value="$ GBP") $ GBP
+								option(value="C$ CAD") $ CAD
 						.change-country
 							span.title Other country sites
 							ul
 								li 
-									img(src="img/USA-flag.png", alt="USA-flag")
-									span Unnited States
-								li 
-									img(src="img/france-flag.png", alt="USA-flag") 
-									span France
-								li 
-									img(src="img/italy-flag.png", alt="USA-flag")
-									span Italy
-								li 
-									img(src="img/australia-flag.png", alt="USA-flag")
-									span Australia
-								li 
-									img(src="img/australia-flag.png", alt="USA-flag")
-									span Australiaas
-
+									a(href="#")
+										img(src="img/USA-flag.png", alt="USA-flag")
+										span Unnited States
+								li
+									a(href="#")
+										img(src="img/france-flag.png", alt="USA-flag")
+										span France
+								li
+									a(href="#")
+										img(src="img/italy-flag.png", alt="USA-flag")
+										span Italy
+								li
+									a(href="#")
+										img(src="img/australia-flag.png", alt="USA-flag")
+										span Australia

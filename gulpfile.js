@@ -39,11 +39,11 @@ gulp.task('build-html', function() {
 gulp.task('build-js', function() {
   gulp.src([
     'bower_components/jquery/dist/jquery.js',
-    'bower_components/modernizr/modernizr.js'
+    'source/js/libs/jquery-ui.min.js'
   ])
-    .pipe( concat('output.min.js') ) 
+    .pipe(concat('output.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('build/js/libs'))
+    .pipe(gulp.dest('build/js/libs'));
   gulp.src([
   	'source/js/*.js'
   ])
@@ -55,13 +55,17 @@ gulp.task('copy-images', function () {
     gulp.src('source/styles/img/*')
         .pipe(gulp.dest('build/img/'));
 });
-
+gulp.task('copy-libs', function () {
+    gulp.src('bower_components/modernizr/modernizr.js')
+        .pipe(gulp.dest('build/js/libs'));
+});
 gulp.task('watch', function () {
    gulp.watch('source/styles/*.less', ['build-css']);
+   gulp.watch('source/styles/components/*.less', ['build-css']);
    gulp.watch('source/jade/*.jade', ['build-html']);
    gulp.watch('source/jade/partials/*.jade', ['build-html']);
    gulp.watch('source/js/*.js', ['build-js']);
 });
 
 
-gulp.task('default', ['build-css', 'build-html', 'build-js', 'copy-images', 'webserver', 'livereload', 'watch']);
+gulp.task('default', ['build-css', 'build-html', 'build-js', 'copy-libs', 'copy-images', 'webserver', 'livereload', 'watch']);
