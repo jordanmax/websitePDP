@@ -1,13 +1,13 @@
 var gulp = require('gulp'),
 	less = require('gulp-less'),
-  autoprefixer = require('gulp-autoprefixer'),
+    autoprefixer = require('gulp-autoprefixer'),
 	minifyCSS = require('gulp-minify-css'),
 	jade = require('gulp-jade'),
 	uglify = require('gulp-uglify'),
 	rename = require('gulp-rename'),
 	concat = require('gulp-concat'),
-  connect = require('gulp-connect'),
-  watch = require('gulp-watch');
+    connect = require('gulp-connect'),
+    watch = require('gulp-watch');
 
 
 gulp.task('webserver', function() {
@@ -27,7 +27,7 @@ gulp.task('build-css', function() {
 	gulp.src('source/styles/main.less')
 		.pipe(less())
 		.pipe(autoprefixer())
-		.pipe(minifyCSS())
+		//.pipe(minifyCSS())
 		.pipe(rename('style.css'))
 		.pipe(gulp.dest('build/css'))
 });
@@ -48,12 +48,16 @@ gulp.task('build-js', function() {
   	'source/js/*.js'
   ])
     .pipe( concat('main.min.js') ) 
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest('build/js/'))
 });
 gulp.task('copy-images', function () {
     gulp.src('source/styles/img/*')
         .pipe(gulp.dest('build/img/'));
+});
+gulp.task('copy-fonts', function () {
+    gulp.src('source/fonts/*')
+        .pipe(gulp.dest('build/fonts'));
 });
 gulp.task('copy-libs', function () {
     gulp.src('bower_components/modernizr/modernizr.js')
@@ -68,4 +72,4 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('default', ['build-css', 'build-html', 'build-js', 'copy-libs', 'copy-images', 'webserver', 'livereload', 'watch']);
+gulp.task('default', ['build-css', 'build-html', 'build-js', 'copy-libs', 'copy-fonts', 'copy-images', 'webserver', 'livereload', 'watch']);

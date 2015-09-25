@@ -1,45 +1,57 @@
 header.top-header.clearfix
-		section.multi-shop-nav
-			.container
-				nav
-					a(href="#").unishop.selected Unishop
-					a(href="#").twister Twister
-					a(href="#").rockStar RockStar's
-				.new-staf
-					a(href="#") Super new stuff is here!!
-		section.top-nav
-			.container
-				.currency
-					.active-currency
-						img(src="img/USA-flag.png", alt="USA-flag")
-						span United Kindom, 
-							a(href="#").currency-select $ USD
-					.currency-dropdown
-						header
-							img(src="img/USA-flag.png", alt="USA-flag")
-							span United Kingdom
-						.change-currency
-							span.title Change currency:
-							select#currency-select.select(name="currency")
-								option(value="$ USD" selected) $ USD
-								option(value="$ GBP") $ GBP
-								option(value="C$ CAD") $ CAD
-						.change-country
-							span.title Other country sites
-							ul
-								li 
-									a(href="#")
-										img(src="img/USA-flag.png", alt="USA-flag")
-										span Unnited States
-								li
-									a(href="#")
-										img(src="img/france-flag.png", alt="USA-flag")
-										span France
-								li
-									a(href="#")
-										img(src="img/italy-flag.png", alt="USA-flag")
-										span Italy
-								li
-									a(href="#")
-										img(src="img/australia-flag.png", alt="USA-flag")
-										span Australia
+	div.multi-shop
+		.container
+			nav.multi-shop__nav
+				a(href="#").multi-shop__nav__item.unishop.multi-shop__nav__item--selected Unishop
+					a(href="#").multi-shop__nav__item.twister Twister
+					a(href="#").multi-shop__nav__item.rockStar RockStar's
+			.new-staf
+				a(href="#").new-staf__link Super New stuff is here!!
+	section.top-nav.clearfix
+		.container.top-nav__wrapper
+			.shop-logo
+				.shop-logo__main UNISHOP
+				.shop-logo__sub ultimate way to shop online
+			.currency
+				.currency__active
+					img(src="img/USA-flag.png", alt="USA-flag").currency__active__img
+					span.currency__active__text United Kindom,
+						.currency__select
+							.currency__select-value-text $ USD
+							.currency__drop-down
+								header.currency__drop-down__header
+									img(src="img/USA-flag.png", alt="USA-flag").currency__drop-down__header__img
+									span.currency__drop-down__header__text United Kingdom
+								.currency__change-currency
+									span.change-currency__title Change currency:
+									select.change-currency__select(name="currency")
+										option(value="$ USD" selected) $ USD
+										option(value="$ GBP") $ GBP
+										option(value="$ CAD") $ CAD
+								.currency__change-country
+									span.currency__change-country__title Other country sites
+									ul.currency__change-country__menu
+										li.currency__change-country__item
+											a(href="#").currency__change-country__link
+												img(src="img/USA-flag.png", alt="USA-flag")
+												span United States
+										li.currency__change-country__item
+											a(href="#").currency__change-country__link
+												img(src="img/france-flag.png", alt="USA-flag")
+												span France
+										li.currency__change-country__item
+											a(href="#").currency__change-country__link
+												img(src="img/italy-flag.png", alt="USA-flag")
+												span Italy
+										li.currency__change-country__item
+											a(href="#").currency__change-country__link
+												img(src="img/australia-flag.png", alt="USA-flag")
+												span Australia
+
+
+			.user-nav
+				a(href="#").user-nav__link My Account
+				a(href="#").user-nav__link Saved Items
+				span.user-nav__cart-value Cart
+					a(href="#").user-nav__cart-link (0)
+					| $(0.0)

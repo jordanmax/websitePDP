@@ -1,97 +1,128 @@
 @import "variables.less";
 .top-header {
 
-    .multi-shop-nav{
-	    background: #e9e9e9;
-		border-bottom:1px solid @grey-light;
-		border-top:1px solid @grey-light;
-    	.clearfix();
-    	nav {
-	    	float: left;
-	        a {
-		        display: inline-block;
-		        color:@grey-medium;        	
-		        text-decoration: none;
-		        font-size: 16px;
-		        line-height: 28px;
-		        padding: 0 12px;
-	        	border-left:1px solid @grey-light;
-	        	text-transform: uppercase;
-	        	transition: all 0.1s ease-in-out;
-		        &:last-child {
-		        	border-right:1px solid @grey-light;
-		        }
-		        &.selected {
-		        	color:@grey-dark;
-		        	background: #fff;
-		        	position: relative;
-		        	&:after {
-		        		content: "";
-		        		position: absolute;
-		        		width: 100%;
-		        		height: 1px;
-		        		background: #fff;
-		        		bottom: -1px;
-		        		left:0px
-		        	}
-		        }
-		        &:hover {
-		        	color:@grey-dark;
-		        }
-	        }
-	    }
-	    .new-staf {
-	    	float: right;
-	    	min-width: 220px;
-	    	position: relative;
-	    	height: 28px;
-	    	a {
-	    		background: @pink;
-	    		color:#fff;
-	    		text-decoration: none;
-				text-align: center;
-		    	font-size: 16px;
-		    	padding: 5px 20px 0;
-		    	box-sizing: border-box;
-		    	display: block;
-		    	position: absolute;
-		    	width: 100%;
-		    	height: 30px;
-		    	top:-1px;
-		    	&:before {
-		    		content: "";
-		    		position: absolute;
-		    		top: 100%;
-		    		left: 0px;
-				    width: 0;
-					height: 0;
-					border-style: solid;
-					border-width: 23px 110px 0 110px;
-					border-color: @pink transparent transparent transparent;
-		    	}
-		    	&:after {
-		    		content: "";
-					width: 13px;
-					height: 12px;
-					position: absolute;
-					bottom: -13px;
-					left: 50%;
-					margin-left: -6px;
-		    		background-image: data-uri('image/png;base64', 'img/ico-star.png');
-					@media @retina {
-						content: "";
-						width: 26px;
-						height: 24px;
-						position: absolute;
-						bottom: -13px;
-						left: 50%;
-						margin-left: -12px;
-						background-image: data-uri('image/png;base64', 'img/ico-star2x.png');
-					}
-		    	}
 
-	    	}
-	    }
-	}
+}
+.top-nav {
+  background: @white;
+  &__wrapper {
+    position: relative;
+  }
+}
+.multi-shop{
+  background: #e9e9e9;
+  border-bottom:1px solid @grey-light;
+  border-top:1px solid @grey-light;
+  .clearfix();
+  &__nav {
+    float: left;
+    &__item {
+      display: inline-block;
+      color:@grey-medium;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 28px;
+      padding: 0 12px;
+      border-left:1px solid @grey-light;
+      text-transform: uppercase;
+      transition: all 0.1s ease-in-out;
+      &:last-child {
+        border-right:1px solid @grey-light;
+      }
+      &--selected {
+        color:@grey-dark;
+        background: #fff;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background: #fff;
+          bottom: -1px;
+          left:0
+        }
+      }
+      &:hover {
+        color:@grey-dark;
+      }
+    }
+  }
+  .new-staf {
+    float: right;
+    min-width: 220px;
+    position: relative;
+    height: 28px;
+    a {
+      background: @pink;
+      color:#fff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 16px;
+      padding: 5px 20px 0;
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 30px;
+      top:-1px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 23px 110px 0 110px;
+        border-color: @pink transparent transparent transparent;
+      }
+      &:after {
+        content: "";
+        width: 13px;
+        height: 12px;
+        position: absolute;
+        bottom: -13px;
+        left: 50%;
+        margin-left: -6px;
+        background-image: data-uri('image/png;base64', 'img/ico-star.png');
+        @media @retina {
+          content: "";
+          width: 26px;
+          height: 24px;
+          position: absolute;
+          bottom: -13px;
+          left: 50%;
+          margin-left: -12px;
+          background-image: data-uri('image/png;base64', 'img/ico-star2x.png');
+        }
+      }
+    }
+  }
+}
+.shop-logo {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 40px 0;
+
+  &__main {
+    color: @grey-darklight;
+    font-size: 40px;
+    font-family: "Aleo", serif;
+  }
+  &__sub {
+    color: @grey;
+    font-size: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: @light;
+    letter-spacing: 1.6px;
+  }
+
+}
+.user-nav {
+  margin: 46px 0 46px;
+  float: right;
+  position: relative;
 }
 
