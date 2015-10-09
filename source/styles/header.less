@@ -1,7 +1,6 @@
 @import "variables.less";
 .top-header {
 
-
 }
 .top-nav {
   background: @white;
@@ -18,6 +17,9 @@
     float: left;
     &__item {
       display: inline-block;
+      text-align: center;
+      min-width: 82px;
+      box-sizing: border-box;
       color:@grey-medium;
       text-decoration: none;
       font-size: 16px;
@@ -48,18 +50,19 @@
       }
     }
   }
-  .new-staf {
+  .new-staff {
     float: right;
     min-width: 220px;
     position: relative;
     height: 28px;
+    font-family: 'Aleo', serif;
     a {
       background: @pink;
       color:#fff;
       text-decoration: none;
       text-align: center;
       font-size: 16px;
-      padding: 5px 20px 0;
+      padding: 6px 20px 0;
       box-sizing: border-box;
       display: block;
       position: absolute;
@@ -100,11 +103,19 @@
     }
   }
 }
+.unishop {
+  font-family: "Aleo", serif;
+}
+.twister {
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
 .shop-logo {
   position: absolute;
   width: 100%;
   text-align: center;
-  padding: 40px 0;
+  padding: 22px 0;
 
   &__main {
     color: @grey-darklight;
@@ -112,6 +123,7 @@
     font-family: "Aleo", serif;
   }
   &__sub {
+    padding-top: 4px;
     color: @grey;
     font-size: 14px;
     font-family: 'Oswald', sans-serif;
@@ -121,8 +133,24 @@
 
 }
 .user-nav {
-  margin: 46px 0 46px;
+  margin: 38px 0 38px;
   float: right;
   position: relative;
+  color: @grey-medium;
+  &__link {
+    color: @grey-medium;
+    text-decoration: none;
+    margin: 0 9px;
+  }
+  &__cart-value {
+    margin: 0 0 0 9px;
+    font-size: 24px;
+  }
+  &__cart-link {
+    margin: 0 5px;
+    display: inline-block;
+    text-decoration: none;
+    color:@grey-dark-lighter
+  }
 }
 

@@ -28,12 +28,15 @@
 	text-decoration: none;
 	position: relative;
 	.default-transition(color);
+	&-value-text {
+	  color: @grey-dark;
+	}
 	&-value-text:after {
 	  content: "";
 	  .default-transition(all);
 	  vertical-align: middle;
 	  margin-top: -2px;
-	  margin-left: 3px;
+	  margin-left: 5px;
 	  display: inline-block;
 	  width: 0;
 	  height: 0;

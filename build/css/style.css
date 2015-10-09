@@ -145,6 +145,9 @@ body {
   background: #f6f6f6;
   -webkit-transition: color 1s linear .2s;
           transition: color 1s linear .2s;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 100;
+  font-size: 16px;
 }
 .container {
   width: 940px;
@@ -174,6 +177,9 @@ body {
 }
 .multi-shop__nav__item {
   display: inline-block;
+  text-align: center;
+  min-width: 82px;
+  box-sizing: border-box;
   color: #999999;
   text-decoration: none;
   font-size: 16px;
@@ -204,19 +210,20 @@ body {
 .multi-shop__nav__item:hover {
   color: #555555;
 }
-.multi-shop .new-staf {
+.multi-shop .new-staff {
   float: right;
   min-width: 220px;
   position: relative;
   height: 28px;
+  font-family: 'Aleo', serif;
 }
-.multi-shop .new-staf a {
+.multi-shop .new-staff a {
   background: #f52c66;
   color: #fff;
   text-decoration: none;
   text-align: center;
   font-size: 16px;
-  padding: 5px 20px 0;
+  padding: 6px 20px 0;
   box-sizing: border-box;
   display: block;
   position: absolute;
@@ -224,7 +231,7 @@ body {
   height: 30px;
   top: -1px;
 }
-.multi-shop .new-staf a:before {
+.multi-shop .new-staff a:before {
   content: "";
   position: absolute;
   top: 100%;
@@ -235,7 +242,7 @@ body {
   border-width: 23px 110px 0 110px;
   border-color: #f52c66 transparent transparent transparent;
 }
-.multi-shop .new-staf a:after {
+.multi-shop .new-staff a:after {
   content: "";
   width: 13px;
   height: 12px;
@@ -246,7 +253,7 @@ body {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALBJREFUeNpi+P//PwMOHIdLDpcGYSD+DKUx5JkYsIMIIOYB4kissjhsOvUfAk5hk2cEEllAvfpI5rACcSISfwEQ/0LiX4S5/9x/4gBInQjMSiEgPkNAwxmoOhQ/CQDxQxwaHkHlMULvAxBz4AhNDqg8GCBrkgRiMSj7HxAfgtIgIArEUtg0wULwBBCbAbE9EJtC+SCgB1PICPYYBMSD+EC8EBR9SIYxQuX+Q+UYAAIMADpxHUvV2XkSAAAAAElFTkSuQmCC");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .multi-shop .new-staf a:after {
+  .multi-shop .new-staff a:after {
     content: "";
     width: 26px;
     height: 24px;
@@ -257,11 +264,19 @@ body {
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAYCAYAAADkgu3FAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVRJREFUeNpi/P//PwOJQA9KXyJFEyMZFnWD9AFxCS0tYgHix1C2LBD/IVonyCISsOd/BPAiRS8TicEWj8SOo1XQ8QPxCyDmgPJ/ALEkEH8gRjMpPgpHsoQByg6jRRwd+Y8JjhKrHxR0ukD72Ai4RwyIt0KTNYo7gdgbiF8R0P8LZFEAkLGSCMvIBb+AOALmNV8g/vmf+uAn1GwG9DzynYqW/ICayYBuEQi7A/E3KljyDWoWAy6LQNgFiL9SYAlIryu6ubiSoyOZln2F6mUg1iIQnkyGRZPJKeu0yEjKWuSUda+BWIREi97i0oPLImkgfkJmBpUB4qfEFqoGOMS/A3EDFH8nSS+OyKvCEtHrgFgeSY0cVAwdVJOS6lYiabyKLV8gYVeoGhhYRYpFN4D4ExAXAzEbEdUAG1TtR6heoiziAuJ5QCxJYnuCAapnPtQMFDmAAAMAoCJcfkcRTrIAAAAASUVORK5CYII=");
   }
 }
+.unishop {
+  font-family: "Aleo", serif;
+}
+.twister {
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
 .shop-logo {
   position: absolute;
   width: 100%;
   text-align: center;
-  padding: 40px 0;
+  padding: 22px 0;
 }
 .shop-logo__main {
   color: #434343;
@@ -269,6 +284,7 @@ body {
   font-family: "Aleo", serif;
 }
 .shop-logo__sub {
+  padding-top: 4px;
   color: #cccccc;
   font-size: 14px;
   font-family: 'Oswald', sans-serif;
@@ -276,9 +292,25 @@ body {
   letter-spacing: 1.6px;
 }
 .user-nav {
-  margin: 46px 0 46px;
+  margin: 38px 0 38px;
   float: right;
   position: relative;
+  color: #999999;
+}
+.user-nav__link {
+  color: #999999;
+  text-decoration: none;
+  margin: 0 9px;
+}
+.user-nav__cart-value {
+  margin: 0 0 0 9px;
+  font-size: 24px;
+}
+.user-nav__cart-link {
+  margin: 0 5px;
+  display: inline-block;
+  text-decoration: none;
+  color: #333333;
 }
 @-webkit-keyframes fadeInUp {
   0% {
@@ -335,13 +367,16 @@ body {
   -webkit-transition: color 0.1s ease-in-out;
           transition: color 0.1s ease-in-out;
 }
+.currency__select-value-text {
+  color: #555555;
+}
 .currency__select-value-text:after {
   content: "";
   -webkit-transition: all 0.1s ease-in-out;
           transition: all 0.1s ease-in-out;
   vertical-align: middle;
   margin-top: -2px;
-  margin-left: 3px;
+  margin-left: 5px;
   display: inline-block;
   width: 0;
   height: 0;
