@@ -1,0 +1,125 @@
+@import "../variables.less";
+@import "../sprite.less";
+
+// #Search input
+.search-box-wrapper {
+  position: relative;
+}
+.search-btn {
+  content: "";
+  display: block;
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  border: none;
+  top: 50%;
+  margin-top: -5px;
+  right: 12px;
+  padding: 0;
+  font-size: 0;
+  cursor: pointer;
+  background: data-uri('image/png;base64', '/img/ico-search.png') no-repeat;
+  @media @retina {
+    content: "";
+    width: 22px;
+    height: 22px;
+    margin-top: -11px;
+    background: data-uri('image/png;base64', '/img/ico-search2X.png') no-repeat;
+  }
+}
+.search-box {
+  display: block;
+  height: 36px;
+  padding: 0 35px 0 12px;
+  line-height: 36px;
+  border: 1px solid @grey-borders;
+  min-width: 246px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 100;
+}
+
+// #Headers
+.header-bottom-separator {
+  text-transform: uppercase;
+  color:  @grey-dark;
+  font-size: 48px;
+  position: relative;
+  text-align: center;
+  border-bottom: 2px solid @grey-dark;
+  padding: 55px 0 24px;
+  &:after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: @grey-dark;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+  }
+}
+// #Socials
+.social-link {
+  display: inline-block;
+  &--instagram {
+    .sprite(@icon-instagram);
+    @media @retina {
+      .sprite(@icon-instagramX2);
+    }
+  }
+  &--twitter {
+    .sprite(@icon-twitter);
+    @media @retina {
+      .sprite(@icon-twitterX2);
+    }
+  }
+  &--youtube {
+    .sprite(@icon-tube);
+    @media @retina {
+      .sprite(@icon-tubeX2);
+    }
+  }
+}
+// #forms staff
+.form {
+  &-field {
+    margin: 10px 0;
+  }
+  &-input {
+    padding: 5px 10px;
+    color: @grey;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    background: #f6f6f6;
+    border: 1px solid #e3e3e3;
+    box-shadow: inset 0 2px 0 rgba(0,0,0,0.05);
+    width: 100%;
+    box-sizing: border-box;
+    .default-transition();
+    &:focus {
+      outline: none;
+      border-color: rgb(18,204,226);
+    }
+  }
+  &-select {
+    min-width: 140px;
+  }
+  &-submit {
+    font-family: 'Oswald', sans-serif;
+    background: @blue;
+    border: none;
+    color: #fff;
+    padding: 6px 20px;
+    min-width: 131px;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    .default-transition();
+    &:hover {
+      background: #2fb789;
+    }
+  }
+}

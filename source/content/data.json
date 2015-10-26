@@ -1,0 +1,37 @@
+{
+  "myVar1": "I AM A STRING!",
+  "myVar2": "BUT NOT _THE_ STRING!",
+  "myArray": [
+    "key1": "dasdsa",
+    "key1": "dasdsa"
+  ],
+  "popularProducts": [
+    {
+      "imgSrc":"content/images/product1.jpg",
+      "header":"DARK BROGUES",
+      "price": "65.07",
+      "salePrice": "38.00",
+      "onSale": true,
+      "isNew": false,
+      "text":"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor."
+    },
+    {
+      "imgSrc":"content/images/product1.jpg",
+      "header":"DARK BROGUES",
+      "price": "65.07",
+      "salePrice": "38.00",
+      "onSale": true,
+      "isNew": false,
+      "text":"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor."
+    }
+  ],
+  "popularProduct":     {
+    "imgSrc":"content/images/product1.jpg",
+    "header":"DARK BROGUES",
+    "price": "65.07",
+    "salePrice": "38.00",
+    "onSale": true,
+    "isNew": false,
+    "text":"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor."
+  }
+}

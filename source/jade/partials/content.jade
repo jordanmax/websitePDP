@@ -1,5 +1,112 @@
-#container
-  p asd
-    a(href='https://github.com/jslby/fewatcher') asd.
-#main
-  h1 ads
+main.main-content
+
+    section.main-slider-wrapper
+        // .main-slider
+        include ../components/main-slider
+        // end main-slider
+
+    // .categories
+    section.categories
+        .container
+            h2.header-bottom-separator THE FINEST QUALITY
+            .categories-wrapper
+                a(href="#").categories__item
+                    h3.categories__item__header Jackets
+                    img(src="content/images/category-jackets.jpg").categories__item__img
+                a(href="#").categories__item
+                    h3.categories__item__header Suites
+                    img(src="content/images/category-suites.jpg").categories__item__img
+                a(href="#").categories__item
+                    h3.categories__item__header Jerseys
+                    img(src="content/images/category-jerseys.jpg").categories__item__img
+                a(href="#").categories__item
+                    h3.categories__item__header Shoes
+                    img(src="content/images/category-shoes.jpg").categories__item__img
+
+            article.categories__info
+                h4.categories__info__header Mauris Iaculis Porttitor Posuere. Praesent Id Metus Massa
+                p.categories__info__text Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci.
+                                        br
+                                        |Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum.
+                                        br
+                                        |Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit.
+    // end .categories
+
+    // .products
+    section.products
+        .container
+            header.products__header
+                h2.products__header__text Popular products
+            .products__link-wrapper
+                a(href="#").products__link View all
+        .products-slider-wrapper
+            include ../components/popular-products
+    // end .products
+
+    // .products
+    section.products.products--padding-bottom
+        .container
+            header.products__header
+                h2.products__header__text Just Arrived
+            .products__link-wrapper
+                a(href="#").products__link View all
+        .products-slider-wrapper
+                include ../components/just-arrived-products
+    // end .products
+
+    // .additions
+    section.additions
+        .container
+            .additions__wrap
+                .additions__item
+                    .additions__item__icon.additions__item__icon--awward
+                    h3.additions__item__header Daily edit
+                    p.additions__item__text The best of New In edited for
+                        br
+                        |work, weekends and going out.
+                    a(href="#").additions__item__link << VIEW DAILY EDIT >>
+                .additions__item
+                    .additions__item__icon.additions__item__icon--eye
+                    h3.additions__item__header Outfits & Looks
+                    p.additions__item__text Create outfits, share
+                        br
+                        |and rate looks. adawdawdawdawd
+                    a(href="#").additions__item__link << VIEW FASHION FINDER >>
+                .additions__item
+                    .additions__item__icon.additions__item__icon--book
+                    h3.additions__item__header MAGAZINE
+                    p.additions__item__text UNISHOP Magazine free to your
+                        br
+                        |iPhone every week.
+                    a(href="#").additions__item__link << DOWNLOAD MAGAZINE >>
+    // end .additions
+
+    section.social-feed
+        .container
+            .social-feed__author
+                strong Tim Vandim&nbsp;
+                | via Twitter
+            p.social-feed__text Lorem ipsum dolor sit amet,&nbsp;
+                a(href="#").social-feed__link @unishop&nbsp;
+                | consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut.
+
+    section.find-store
+        .find-store__map-overlay
+        header.find-store__header
+            h2.find-store__title Worldwide store locator
+        .container
+            form(name="findStore", action="", method="")
+                .find-address
+                    input(type="text").find-address__input
+                    .find-address__placeholder Zip-code or Address
+                .find-store__radius
+                    span.find-store__radius__text Radius:
+                    select.find-store__radius__select
+                        option(value="25 Miles" selected) 25 Miles
+                        option(value="30 Miles") 30 Miles
+                        option(value="35 Miles") 35 Miles
+                        option(value="40 Miles") 40 Miles
+                        option(value="45 Miles") 45 Miles
+                        option(value="50 Miles") 50 Miles
+                .find-store__wrap-btn
+                    input(type="submit", value="Find a Store").find-store__submit

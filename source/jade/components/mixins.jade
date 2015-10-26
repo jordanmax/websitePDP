@@ -1,0 +1,19 @@
+// Products
+mixin productsSlider(products)
+   .products-slider
+      - each product in products
+         - var productClass = (product.onSale ? 'products__item--on-sale products__item' : 'products__item')
+         - if(product.isNew) {productClass = (product.isNew ? 'products__item--new products__item' : 'products__item')}
+         div(class=productClass)
+            figure.products-item__img-wrap
+               img(src=product.imgSrc).products-item__img
+               p.products-item__text= product.text
+            .products-item__descr
+               a(href="#").products-item__header= product.header
+               .products-item__price
+                  span.products-item__price__value $&nbsp
+                     = product.price
+                  if product.onSale
+                     span.products-item__price__value--sale $&nbsp
+                        = product.salePrice
+            a(href="#").products-item__btn Add to cart

@@ -1,0 +1,18 @@
+mixin mainSlider(slides)
+    .main-slider
+        - each slide in slides
+            .main-slider__item
+                figure.slider-item__img-wrapper
+                    img(src=slide.imgSrc).slider-item__img
+                article.slider-item__descr
+                    h3.slider-item__header= slide.header
+                    p.slider-item__text= slide.text
+                    .slider-item__btn-wrapper
+                        a(href="#").slider-item__btn View Collection
+
+-slide1 = {imgSrc:"content/images/slider-img1.png",header:"Gentlemen, this way please",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae massa velit, eu laoreet massa. Sed ac orci libero, eu dignissim enim.",linkText: "View Collection"};
+-slide2 = {imgSrc:"content/images/slider-img1.png",header:"Gentlemen, this way please",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae massa velit, eu laoreet massa. Sed ac orci libero, eu dignissim enim.",linkText: "View Collection"};
+-slide3 = {imgSrc:"content/images/slider-img1.png",header:"Gentlemen, this way please",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae massa velit, eu laoreet massa. Sed ac orci libero, eu dignissim enim.",linkText: "View Collection"};
+-slides = [slide1,slide2,slide3]
+
+mixin mainSlider(slides)

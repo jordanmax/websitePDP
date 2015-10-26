@@ -1,0 +1,50 @@
+@import "../variables.less";
+
+.main-navbar-wrapper {
+  position: relative;
+  background: #fff;
+  &:before {
+    content: "";
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    background: @grey-borders;
+    top: 0;
+  }
+  &:after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    background: @grey-borders;
+    bottom: 0;
+  }
+}
+.main-navbar {
+  &__item {
+    float: left;
+    .default-transition();
+    & + & {
+      margin-left: 15px;
+    }
+    &__link {
+      font-size: 18px;
+      position: relative;
+      z-index: 1;
+      display: block;
+      line-height: 36px;
+      text-decoration: none;
+      color: @grey-dark;
+      padding: 0 12px;
+      .default-transition();
+      &--active {
+        color: #fff;
+        background: @blue;
+      }
+      &:hover {
+        color: #fff;
+        background: #1ca0c7;
+      }
+    }
+  }
+}

@@ -10,34 +10,31 @@
 @grey-black: black;
 @grey-dark: #555;
 @grey-dark-lighter: #333;
-@grey-medium: #999;
-@grey-darklight:#434343;
+@grey-medium: #999999;
+@grey-darklight: #434343;
 @grey-light: #d7d7d7;
 @grey-verylight: #6f6f6f;
 @grey: #cccccc;
+@grey-borders: #d2d0d0;
 
 @white: #fff;
 
-//@blue: #0060BA;
-@blue: #0055A6;
+@blue: #167c9a;
+
 @red: #E84132;
 @orange: #F78818;
-@green: #7ED321;
+@green: #2fb789;
 @pink:#f52c66;
-
-@hover-link: @blue;
-//@hover-link: #4C88C1;
-@hover-button: #004C94;
-//@hover-button: #3377B8;
-@hover-block: #EDF7FF;
-
-@button-shadow: 0px 1px 2px 0px rgba(0,0,0,0.50);
 
 .default-transition(...) {
   @value: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
-  transition: @value 0.1s ease-in-out;
+  transition: @value 0.2s ease-in-out;
 }
-
+.finishedAnimation(@delay: 1.5s) {
+  opacity: 1;
+  transform: translate3d(0px, 0, 0);
+  transition-delay: @delay;
+}
 .image-2x(@image, @repeat: no-repeat) {
   @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
   @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
@@ -49,7 +46,6 @@
       background-size: image-size(@image);
   }
 }
-
 .image-2x(@image, @repeat: no-repeat, @dataURI) when (@dataURI = true) {
   @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
   @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
@@ -61,7 +57,6 @@
       background-size: image-size(@image);
   }
 }
-
 .clearfix {
     &:after {
         content: " "; /* Older browser do not support empty content */
@@ -70,4 +65,48 @@
         height: 0;
         clear: both;
     }
+}
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  background-image: url('../img/@{sprite-image}');
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
 }
