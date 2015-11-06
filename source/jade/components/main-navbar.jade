@@ -1,8 +1,76 @@
 section.main-navbar-wrapper
     .container.clearfix
+        .main-navbar__toggle
+            .main-navbar__toggle__borders
         ul.main-navbar.clearfix.pull-left
-            li.main-navbar__item
-                a(href="#").main-navbar__item__link.main-navbar__item__link--active Women
+            li.main-navbar__item.mega-menu
+                a.main-navbar__item__link Women
+                .mega-menu__wrapper.container
+                    .mega-menu__content
+                        .mega-menu__category
+                            header.mega-menu__header Shop by products
+                            .mega-menu__category__links
+                                .mega-menu__onehalf
+                                    ul.mega-menu__sub
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link New in: Clothing
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link New in: Accessories
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link New in: Shoes
+                                        li.mega-menu__sub__item.mega-menu__sub__item--adv SALE - Up to 50%
+                                    ul.mega-menu__sub
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Accessories
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Caps & Hats
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Jumpers & Cardigans
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Leather Jackets
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Shirts
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Shoes, Boots & Trainers
+                                .mega-menu__onehalf
+                                    ul.mega-menu__sub
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Shorts
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Swimwear
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Trousers & Chinos
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Bags
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Watches
+                                        li.mega-menu__sub__item
+                                            a(href="#").mega-menu__sub__link Officewear
+
+                        .mega-menu__category
+                            header.mega-menu__header Shop by brands
+                            .mega-menu__category__links
+                                ul.mega-menu__sub
+                                    li.mega-menu__sub__item
+                                        a(href="#").mega-menu__sub__link American Apparel
+                                    li.mega-menu__sub__item
+                                        a(href="#").mega-menu__sub__link Bellfield
+                                    li.mega-menu__sub__item
+                                        a(href="#").mega-menu__sub__link Cheap Monday
+                                    li.mega-menu__sub__item
+                                        a(href="#").mega-menu__sub__link Farah Vintage
+                                    li.mega-menu__sub__item
+                                        a(href="#").mega-menu__sub__link G - Star
+                                    li.mega-menu__sub__item
+                                        a(href="#").mega-menu__sub__link New Balance
+                                    li.mega-menu__sub__item
+                                        a(href="#").mega-menu__sub__link Nike
+                                    li.mega-menu__sub__item
+                                        a(href="#").mega-menu__sub__link Ray-Ban
+                                    li.mega-menu__sub__item
+                                        a(href="#").mega-menu__sub__link New Balance
+                                    li.mega-menu__sub__item
+                                        a(href="#").mega-menu__sub__link.mega-menu__add-link A to Z Brands
             li.main-navbar__item
                 a(href="#").main-navbar__item__link Men
             li.main-navbar__item
@@ -14,6 +82,12 @@ section.main-navbar-wrapper
             li.main-navbar__item
                 a(href="#").main-navbar__item__link Locator
         .search-box-wrapper.pull-right
-            form(name="login", action="", method="")
-                input(type="text", placeholder="Search please").search-box
-                input(type="submit").search-btn
+            a(href="#").main-navbar__cart
+                .main-navbar__cart__items-count 5
+            a(href="#").main-navbar__user-link
+
+            form(name="search", action="", method="")
+                .search-box-inputs
+                    input(type="text", placeholder="Search please").search-box
+                    input(type="submit").search-btn
+                    .mobile-search-input-trigger

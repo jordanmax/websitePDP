@@ -1,34 +1,53 @@
-@import "variables.less";
-@import "reset.less";
+@import 'variables.less';
+@import 'reset.less';
 //@import "jquery-ui.less";
 
 // #Fonts
 @font-face {
-  font-family: 'Aleo';
-  src: url('/fonts/aleo-regular-webfont.eot');
-  src: url('/fonts/aleo-regular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/aleo-regular-webfont.woff') format('woff'),
-  url('/fonts/aleo-regular-webfont.ttf') format('truetype'),
-  url('/fonts/aleo-regular-webfont.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Aleo';
+	font-weight: normal;
+	font-style: normal;
+
+	src: url('/fonts/aleo-regular-webfont.eot');
+	src: url('/fonts/aleo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('/fonts/aleo-regular-webfont.woff') format('woff'),
+	url('/fonts/aleo-regular-webfont.ttf') format('truetype'),
+	url('/fonts/aleo-regular-webfont.svg') format('svg');
 }
 
 body {
-  background: #f6f6f6;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 100;
-  font-size: 16px;
+	background: #f6f6f6;
+
+	font-family: 'Oswald', sans-serif;
+	font-size: 16px;
+	font-weight: 100;
 }
 
 // #Helpers
 .pull-left {
-  float: left;
+	float: left;
 }
 .pull-right {
-  float: right;
+	float: right;
 }
-
-@import "grid.less";
-@import "header.less";
-@import "components.less";
+.only-wide-screen(@display: block) {
+	display: none;
+	@media @medium {
+		display: @display;
+	}
+}
+.only-wide-screen--block {
+	display: none;
+	@media @medium {
+		display: block;
+	}
+}
+.only-wide-screen--inline-block {
+	display: none;
+	@media @medium {
+		display: inline-block;
+	}
+}
+@import 'grid.less';
+@import 'header.less';
+@import 'components.less';

@@ -10,10 +10,14 @@ mixin productsSlider(products)
                p.products-item__text= product.text
             .products-item__descr
                a(href="#").products-item__header= product.header
-               .products-item__price
-                  span.products-item__price__value $&nbsp
-                     = product.price
-                  if product.onSale
+               if product.onSale
+                  .products-item__price.products-item__price--have-sale
+                     span.products-item__price__value $&nbsp
+                        = product.price
                      span.products-item__price__value--sale $&nbsp
-                        = product.salePrice
+                           = product.salePrice
+               else
+                  .products-item__price
+                     span.products-item__price__value $&nbsp
+                        = product.price
             a(href="#").products-item__btn Add to cart

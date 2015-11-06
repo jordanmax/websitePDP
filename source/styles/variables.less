@@ -28,34 +28,12 @@
 
 .default-transition(...) {
   @value: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
-  transition: @value 0.2s ease-in-out;
+  transition: @value 0.3s ease-in-out;
 }
 .finishedAnimation(@delay: 1.5s) {
   opacity: 1;
   transform: translate3d(0px, 0, 0);
   transition-delay: @delay;
-}
-.image-2x(@image, @repeat: no-repeat) {
-  @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
-  @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
-  background-image: ~`"url('@{filename}.@{extension}')"`;
-  background-repeat: @repeat;
-  
-  @media @retina {
-      background-image: ~`"url('@{filename}@2x.@{extension}')"`;
-      background-size: image-size(@image);
-  }
-}
-.image-2x(@image, @repeat: no-repeat, @dataURI) when (@dataURI = true) {
-  @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
-  @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
-  background-image: data-uri('@{filename}.@{extension}');
-  background-repeat: @repeat;
-  
-  @media @retina {
-      background-image: data-uri('@{filename}@2x.@{extension}');
-      background-size: image-size(@image);
-  }
 }
 .clearfix {
     &:after {
@@ -92,16 +70,6 @@
   .sprite-width(@sprite);
   .sprite-height(@sprite);
 }
-
-/*
-The `.sprites` mixin generates identical output to the CSS template
-  but can be overridden inside of LESS
-
-This must be run when you have at least 2 sprites.
-  If run with a single sprite, then there will be reference errors.
-
-.sprites(@spritesheet-sprites);
-*/
 .sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
   @sprite: extract(@sprites, @i);
   @sprite-name: e(extract(@sprite, 10));

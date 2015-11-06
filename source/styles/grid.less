@@ -1,11 +1,18 @@
+@wide: ~"(min-width: 1200px)";
+@medium: ~"(min-width: 992px)";
+@tablets: ~"(min-width: 690px)";
+@mobile: ~"(max-width: 690px)";
+
 .container {
-  width: 940px;
   margin: 0 auto;
+  padding: 0 30px;
+  @media @tablets {
+    width: 620px;
+    padding: 0;
+  }
+  @media @medium {
+    width: 940px;
+  }
 }
-.main-slider-wrapper {
-  width: 1100px;
-  margin: 0 auto;
-  padding: 0 80px;
-  box-sizing: border-box;
-  position: relative;
-}
+
+
